@@ -1,0 +1,27 @@
+tsc -w app.ts => ts내용이 js로 자동 갱신
+타입스크립트의 특징: 정적 타이핑
+//function logName (name: string){ //tsc --init => 함수이름 에러 제거
+//    console.log(name);
+//}
+//logName('Jack');
+//함수의 결과값에도 타입 표시 가능, 반환하지 않으면 :void
+//선택적 프로퍼티 => 프로퍼티? :타입
+//Readonly 프로퍼티는 읽기전용, 객체 생성시 할당된 프로퍼티 값 바꿀 수 없음
+//인터페이스는 타입스크립트에 정보제공하기 위한 도구, 자바스크립트에는 나오지 않음
+//프로퍼티의 값을 제한하는 방법 2 가지 : enum, 리터럴 타입
+//열겨형 Enum: 연관된 아이템들을 함께 묶어서 표현할 수 있는 수단
+//리터럴 타입 => 속성: 값1|값2|값3 형식으로 파이프라인 이용 
+//any타입은 어떤 타입이든 가능, 다른타입 재할당가능
+//제한된 타입들을 동시지정할 때 => 유니언 타입 사용 => let someValue: number | string
+//코드를 타입으로 지정하고 재활용하는 것도 가능 => Type Aliases => type StrOrNum = number | string;
+//TypeofOperator는 변수의 데이터 타입을 반환하는 연산자 , 코드검증을 수행하는것 = 타입가드
+
+function add (num1, num2){
+    return num1+num2;
+}
+
+const add = (num1, num2) => num1 + num2;
+
+//Constructor(생성자)는 클래스로부터 객체를 생성할 때 호출되면 객체의 초기화를 담당
+//Access Modifiers는 클라스 속 멤버 변수(프로퍼티)와 메소드에 적용될 수 있는 키워드로 클라스 외부로부터의 접근 통제 
+=> Public(기본), Private, Protected(클래스 내부, 상속클래스 가능)
